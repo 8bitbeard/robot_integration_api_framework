@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220124 18:44:46.857" rpa="false" schemaversion="2">
+<suite id="s1" name="V1 Users" source="/home/wilton/source-github/robot_integration_api_framework/TestCases/v1_users.robot">
+<test id="s1-t1" name="Deve retornar uma lista de usuários cadastrados">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220124 18:44:47.035" level="INFO">Creating Session using : alias=mysession, url=http://localhost:5000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220124 18:44:47.034" endtime="20220124 18:44:47.035"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/v1/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220124 18:44:47.054" level="INFO">GET Request : url=http://localhost:5000/api/v1/users (redirected) 
+ path_url=/api/v1/users 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220124 18:44:47.054" level="INFO">GET Response : url=http://localhost:5000/api/v1/users/ 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Content-Length': '26763', 'Server': 'Werkzeug/2.0.1 Python/3.8.10', 'Date': 'Mon, 24 Jan 2022 21:44:47 GMT'} 
+ body=[
+  {
+    "id": "49efb475-0428-4d14-8a86-490f256d0b90", 
+    "name": "UnixUser", 
+    "email": "unix_user@example.com"
+  }, 
+  {
+    "id": "d00dd56c-4cd3-40a8-97ec-48c575873007", 
+    "name": "QATMP01", 
+    "email": "qa_tmp_01@example.com"
+  }, 
+  {
+    "id": "7a60996a-2214-47e5-b43f-6204dae30471", 
+    "name": "Yuriko", 
+    "email": "lena@beer.com"
+  }, 
+  {
+    "id": "6dfbe5a5-c356-451b-aa16-84f1af5d9eed", 
+    "name": "Fairy", 
+    "email": "walter_fadel@strosin.com"
+  }, 
+  {
+    "id": "3e36c88f-7861-432d-9dd8-871bbf4c907a", 
+    "name": "QATMP02", 
+    "email": "qa_tmp_02@example.com"
+  }, 
+  {
+    "id": "ec9f2688-f005-4804-8ee5-e0c10badf26f", 
+    "name": "Wilfredo", 
+    "email": "derick@fritsch-mann.com"
+  }, 
+  {
+    "id": "506025ac-c8ab-4717-b320-adb954a839af", 
+    "name": "Celeste", 
+    "email": "lupe@stracke-jones.co"
+  }, 
+  {
+    "id": "390d59b9-874a-4bbd-b7a0-1086d1946e26", 
+    "name": "Lorrie", 
+    "email": "jenell@wilkinson-tremblay.biz"
+  }, 
+  {
+    "id": "ad065f32-b611-4458-8277-10047d514858", 
+    "name": "Maura", 
+    "email": "rochel.treutel@prosacco-lemke.info"
+  }, 
+  {
+    "id": "3f8029f4-84bb-4f08-971d-b36a85544575", 
+    "name": "Jaime", 
+    "email": "valencia@kling.info"
+  }, 
+  {
+    "id": "4d79e0b8-8441-4d57-9fc3-811b8e619ee1", 
+    "name": "Valentine", 
+    "email": "seymour@swift-hansen.biz"
+  }, 
+  {
+    "id": "48b9c55e-850d-47d6-a4a9-97e5ae646086", 
+    "name": "Jung", 
+    "email": "greg@kirlin.net"
+  }, 
+  {
+    "id": "54484712-38e1-4c04-9f4c-1869bc5c4c30", 
+    "name": "Ardath", 
+    "email": "cary_yundt@ondricka.name"
+  }, 
+  {
+    "id": "cb062bd4-f3a5-4ef4-b404-43ca81f3d7ee", 
+    "name": "Dillon", 
+    "email": "stephan.macejkovic@johnston-cormier.net"
+  }, 
+  {
+    "id": "f1769d91-df02-45bb-a58e-e8abb5f281ed", 
+    "name": "Precious", 
+    "email": "elna@heller.com"
+  }, 
+  {
+    "id": "b53ac958-8441-4263-9b64-1ed93e05e09d", 
+    "name": "Jani", 
+    "email": "carmelita@legros.co"
+  }, 
+  {
+    "id": "29192375-2c25-4b70-a764-52d1e865fbb2", 
+    "name": "Sook", 
+    "email": "sheba_hettinger@kreiger-torphy.io"
+  }, 
+  {
+    "id": "3785ffcb-a732-4b4d-a455-ede609294993", 
+    "name": "Mammie", 
+    "email": "kelvin.senger@kris.co"
+  }, 
+  {
+    "id": "d026e86c-3700-4e03-adc1-5e48dbf660dc", 
+    "name": "Ismael", 
+    "email": "hye@powlowski-heller.co"
+  }, 
+  {
+    "id": "ec5ab183-943f-4860-b549-882505502dc8", 
+    "name": "Wade", 
+    "email": "harvey@hyatt.net"
+  }, 
+  {
+    "id": "8964b3a0-7c30-430b-9cdc-61686075ee26", 
+    "name": "Kory", 
+    "email": "freeman@gleichner-little.info"
+  }, 
+  {
+    "id": "4daf412f-d513-4ac8-8d0a-e377012e7ac1", 
+    "name": "Lina", 
+    "email": "ernie_okuneva@collier-streich.com"
+  }, 
+  {
+    "id": "ce2ea6bd-4370-4523-98fd-dca7a26008cd", 
+    "name": "Tod", 
+    "email": "ladawn.kutch@schimmel-schimmel.com"
+  }, 
+  {
+    "id": "13320351-5422-451c-ace5-f090f3453e75", 
+    "name": "Contessa", 
+    "email": "santos@stokes.name"
+  }, 
+  {
+    "id": "eaccdfe5-d760-4934-a110-c4360f5ae7de", 
+    "name": "Otha", 
+    "email": "moses@toy.net"
+  }, 
+  {
+    "id": "5283395f-2a0c-4d93-b2a3-dae7d48b3986", 
+    "name": "Mariah", 
+    "email": "mauro_reinger@bergstrom.net"
+  }, 
+  {
+    "id": "93191349-8334-4bb1-b627-eef7344417e2", 
+    "name": "Sammie", 
+    "email": "elouise@stoltenberg.biz"
+  }, 
+  {
+    "id": "d16fd6bb-6d2b-4f52-8bb3-79167556a146", 
+    "name": "Hue", 
+    "email": "sheldon.robel@moore.biz"
+  }, 
+  {
+    "id": "4a49aa6a-fed8-468f-9b7b-319b98845295", 
+    "name": "Colby", 
+    "email": "gerald_mcclure@bashirian.biz"
+  }, 
+  {
+    "id": "c0101139-a46a-4e8b-996b-8561dcd62e6a", 
+    "name": "Elroy", 
+    "email": "malik_hane@schamberger.biz"
+  }, 
+  {
+    "id": "2448cba6-5b5f-4a7b-bbae-91781180c020", 
+    "name": "Alissa", 
+    "email": "china_kuhlman@schimmel.info"
+  }, 
+  {
+    "id": "6d102116-8458-4be5-bb4c-5d3e9e0b98fc", 
+    "name": "Lorette", 
+    "email": "kevin@blick.info"
+  }, 
+  {
+    "id": "cf3babba-5fb4-465b-829f-1b227686430d", 
+    "name": "Thuy", 
+    "email": "shay.kassulke@bernier.name"
+  }, 
+  {
+    "id": "9ef9f448-d428-42a7-8b55-efc16b351515", 
+    "name": "Elvin", 
+    "email": "athena_halvorson@kuhn.biz"
+  }, 
+  {
+    "id": "32f00cd2-fd47-4a83-9363-57949c79bb97", 
+    "name": "Juan", 
+    "email": "harley_watsica@zieme.net"
+  }, 
+  {
+    "id": "dc363a88-d549-45fd-a59e-b3bc049b7176", 
+    "name": "Jackelyn", 
+    "email": "anya@hilpert-baumbach.net"
+  }, 
+  {
+    "id": "64ea76a9-7857-4f2c-9aef-62de24eff8ae", 
+    "name": "Fredda", 
+    "email": "roman@hermann.name"
+  }, 
+  {
+    "id": "b5f460eb-d5cf-473a-bf7c-686fdaa45ebc", 
+    "name": "Lydia", 
+    "email": "amiee.block@stark.biz"
+  }, 
+  {
+    "id": "d54ed44c-5e10-4787-baeb-48b2a1fa4359", 
+    "name": "Andy", 
+    "email": "vernon.rice@mayer.name"
+  }, 
+  {
+    "id": "e1307b7e-e748-4401-a375-eee0acf38849", 
+    "name": "Oswaldo", 
+    "email": "lovetta@stamm.name"
+  }, 
+  {
+    "id": "7547c070-274e-45a2-8cd6-134330050dc1", 
+    "name": "Magnolia", 
+    "email": "isiah@haley-schaden.co"
+  }, 
+  {
+    "id": "a0e7bb10-2db4-4bbc-a375-0829eb7dd4c4", 
+    "name": "Blair", 
+    "email": "lashunda_johns@purdy-lesch.name"
+  }, 
+  {
+    "id": "2a5e7d3a-a43a-4a08-9d3f-c0944ec2e69f", 
+    "name": "Alonso", 
+    "email": "kendrick_jones@conroy.io"
+  }, 
+  {
+    "id": "4016777a-ce20-4f46-96b2-7aa68e6bd550", 
+    "name": "Sharell", 
+    "email": "abbey@beier.io"
+  }, 
+  {
+    "id": "086c232a-6ab7-4251-b565-8f4b726ca434", 
+    "name": "Cassidy", 
+    "email": "shirley_krajcik@lockman-fisher.biz"
+  }, 
+  {
+    "id": "f05c40c7-5d35-4310-a970-e1cd5f688e9e", 
+    "name": "Sanda", 
+    "email": "laurence@damore-white.name"
+  }, 
+  {
+    "id": "e6df1ca6-4e0a-4f3b-88e8-4f950346b4fd", 
+    "name": "Candis", 
+    "email": "nathanael_terry@hessel.net"
+  }, 
+  {
+    "id": "4542305e-23f0-4848-8435-bee1bc1c6a78", 
+    "name": "Karin", 
+    "email": "mathilda@greenfelder-mcdermott.biz"
+  }, 
+  {
+    "id": "9ad8887e-b3ce-4b00-ad03-963c900bc687", 
+    "name": "Malena", 
+    "email": "rochel@towne.co"
+  }, 
+  {
+    "id": "09cb90a0-5c71-4d45-a321-66d6e689acbc", 
+    "name": "Bret", 
+    "email": "emilee@reynolds.co"
+  }, 
+  {
+    "id": "ad8342bf-3ef7-4ce1-831e-6a61dbced39a", 
+    "name": "Reiko", 
+    "email": "fredricka.stiedemann@dibbert-boyer.name"
+  }, 
+  {
+    "id": "d50d176f-103a-40e8-a610-8b2d8cfda09e", 
+    "name": "Coreen", 
+    "email": "marti_purdy@blick-greenholt.io"
+  }, 
+  {
+    "id": "882a87fe-6fba-4a71-940a-19dda8a284a9", 
+    "name": "Lawana", 
+    "email": "charley@smith.co"
+  }, 
+  {
+    "id": "eba931cc-c8a7-4ab5-8794-bb4a08faab56", 
+    "name": "Dorotha", 
+    "email": "connie@welch.org"
+  }, 
+  {
+    "id": "d0b33698-4c71-4d5e-a404-ed24ec1f0852", 
+    "name": "Gino", 
+    "email": "gino@price.info"
+  }, 
+  {
+    "id": "7bd27b1a-4884-49cc-91b9-86d86468a337", 
+    "name": "Arthur", 
+    "email": "qa_tmp_160247@example.com"
+  }, 
+  {
+    "id": "f0d56fac-0a5f-46a9-aae8-cc3398d051f9", 
+    "name": "Graham", 
+    "email": "qa_tmp_829627@example.com"
+  }, 
+  {
+    "id": "7c3e06d8-3035-4c2a-b0b3-e268c9f158ff", 
+    "name": "Trinh", 
+    "email": "qa_tmp_666548@example.com"
+  }, 
+  {
+    "id": "6c1b0685-551c-4b2a-a6af-15d1026128ea", 
+    "name": "Carey", 
+    "email": "qa_tmp_878195@example.com"
+  }, 
+  {
+    "id": "0805b893-1acb-4c96-b1d7-5a1ee6cab331", 
+    "name": "Astrid", 
+    "email": "qa_tmp_606265@example.com"
+  }, 
+  {
+    "id": "ed533e11-06ab-4928-ba58-166ce3261455", 
+    "name": "Francoise", 
+    "email": "qa_tmp_916234@example.com"
+  }, 
+  {
+    "id": "14004826-bee7-48d0-95d4-226003010669", 
+    "name": "Star", 
+    "email": "qa_tmp_806899@example.com"
+  }, 
+  {
+    "id": "1c02c0f6-d37c-4514-b267-c9690db0719f", 
+    "name": "Angelo", 
+    "email": "qa_tmp_981371@example.com"
+  }, 
+  {
+    "id": "b3f06d47-3136-4007-a096-2a5e409ee9da", 
+    "name": "Debby", 
+    "email": "qa_tmp_119530@example.com"
+  }, 
+  {
+    "id": "b844bd8d-aaca-43bf-aaad-08e606b8e61a", 
+    "name": "Domitila", 
+    "email": "qa_tmp_285148@example.com"
+  }, 
+  {
+    "id": "47274b3f-408f-4a49-8634-35ab7b0e762f", 
+    "name": "Romona", 
+    "email": "qa_tmp_992928@example.com"
+  }, 
+  {
+    "id": "90336596-31aa-4590-a9c4-243811a9db35", 
+    "name": "Elsie", 
+    "email": "qa_tmp_255431@example.com"
+  }, 
+  {
+    "id": "c9d0e426-1bf9-4ca2-9435-5c9a9abcb101", 
+    "name": "Lawrence", 
+    "email": "qa_tmp_162949@example.com"
+  }, 
+  {
+    "id": "e94077e6-7a05-4ed0-88de-8e400b64e109", 
+    "name": "QATMP6242", 
+    "email": "qa_tmp_6242@example.com"
+  }, 
+  {
+    "id": "cf0d111c-b942-4eba-86c8-ebcde2f936d7", 
+    "name": "QATMP934", 
+    "email": "qa_tmp_934@example.com"
+  }, 
+  {
+    "id": "388f66e6-e4da-409a-9985-fde174ca7c37", 
+    "name": "QATMP7791", 
+    "email": "qa_tmp_7791@example.com"
+  }, 
+  {
+    "id": "1f8b66b8-1ac1-4ae3-bb8f-8bc3b61421e2", 
+    "name": "QATMP3930", 
+    "email": "qa_tmp_3930@example.com"
+  }, 
+  {
+    "id": "f78db373-d977-4701-8f75-d51209b6dba1", 
+    "name": "QATMP1047", 
+    "email": "qa_tmp_1047@example.com"
+  }, 
+  {
+    "id": "7302d533-567d-4f0e-b900-440067e64fac", 
+    "name": "QATMP3284", 
+    "email": "qa_tmp_3284@example.com"
+  }, 
+  {
+    "id": "0b6e3e58-7e7a-4351-b74d-0b8ef032e160", 
+    "name": "QATMP2505", 
+    "email": "qa_tmp_2505@example.com"
+  }, 
+  {
+    "id": "7ccaa2a9-8eeb-4d23-a7d1-da5cd0b60f2d", 
+    "name": "QATMP24", 
+    "email": "qa_tmp_24@example.com"
+  }, 
+  {
+    "id": "194672f9-298f-4095-8ccb-ea24d6a0df6c", 
+    "name": "QATMP9221", 
+    "email": "qa_tmp_9221@example.com"
+  }, 
+  {
+    "id": "d6147c39-7075-4bde-9da3-b48aca545990", 
+    "name": "QATMP4147", 
+    "email": "qa_tmp_4147@example.com"
+  }, 
+  {
+    "id": "9dae876d-440a-47da-abef-d7d39cfc8d28", 
+    "name": "QATMP2388", 
+    "email": "qa_tmp_2388@example.com"
+  }, 
+  {
+    "id": "a6f188f2-c998-4ed1-8ecb-496027fac35c", 
+    "name": "QATMP3344", 
+    "email": "qa_tmp_3344@example.com"
+  }, 
+  {
+    "id": "b0f5114a-1cbf-4c93-9f14-a41436350e99", 
+    "name": "QATMP7059", 
+    "email":... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220124 18:44:47.054" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220124 18:44:47.035" endtime="20220124 18:44:47.054"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220124 18:44:47.055" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20220124 18:44:47.055" endtime="20220124 18:44:47.055"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220124 18:44:47.055" endtime="20220124 18:44:47.056"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220124 18:44:47.057" level="INFO">${body} = [
+  {
+    "id": "49efb475-0428-4d14-8a86-490f256d0b90", 
+    "name": "UnixUser", 
+    "email": "unix_user@example.com"
+  }, 
+  {
+    "id": "d00dd56c-4cd3-40a8-97ec-48c575873007", 
+    "name": "QATMP01...</msg>
+<status status="PASS" starttime="20220124 18:44:47.056" endtime="20220124 18:44:47.057"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${body}</arg>
+<arg>UnixUser</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220124 18:44:47.057" endtime="20220124 18:44:47.057"/>
+</kw>
+<status status="PASS" starttime="20220124 18:44:47.034" endtime="20220124 18:44:47.057"/>
+</test>
+<test id="s1-t2" name="Deve cadastrar um novo usuário com sucesso">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220124 18:44:47.058" level="INFO">Creating Session using : alias=mysession, url=http://localhost:5000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220124 18:44:47.058" endtime="20220124 18:44:47.058"/>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<var>${name}</var>
+<msg timestamp="20220124 18:44:47.059" level="INFO">${name} = Kaitlin</msg>
+<status status="PASS" starttime="20220124 18:44:47.058" endtime="20220124 18:44:47.059"/>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20220124 18:44:47.059" level="INFO">${email} = andersonvalerie@example.org</msg>
+<status status="PASS" starttime="20220124 18:44:47.059" endtime="20220124 18:44:47.059"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220124 18:44:47.059" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220124 18:44:47.059" endtime="20220124 18:44:47.059"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/v1/users/</arg>
+<arg>data={"name": "${name}", "email": "qa_tmp_${email}", "password": "123456"}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220124 18:44:47.163" level="INFO">POST Request : url=http://localhost:5000/api/v1/users/ 
+ path_url=/api/v1/users/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '88'} 
+ body={"name": "Kaitlin", "email": "qa_tmp_andersonvalerie@example.org", "password": "123456"} 
+ </msg>
+<msg timestamp="20220124 18:44:47.163" level="INFO">POST Response : url=http://localhost:5000/api/v1/users/ 
+ status=201, reason=CREATED 
+ headers={'Content-Type': 'application/json', 'Content-Length': '123', 'Server': 'Werkzeug/2.0.1 Python/3.8.10', 'Date': 'Mon, 24 Jan 2022 21:44:47 GMT'} 
+ body={
+  "id": "815c1e72-df60-4d61-af8e-bca069e4bf0e", 
+  "name": "Kaitlin", 
+  "email": "qa_tmp_andersonvalerie@example.org"
+}
+ 
+ </msg>
+<msg timestamp="20220124 18:44:47.163" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220124 18:44:47.060" endtime="20220124 18:44:47.163"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220124 18:44:47.164" level="INFO">${status_code} = 201</msg>
+<status status="PASS" starttime="20220124 18:44:47.163" endtime="20220124 18:44:47.164"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220124 18:44:47.164" endtime="20220124 18:44:47.164"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220124 18:44:47.165" level="INFO">${res_body} = {
+  "id": "815c1e72-df60-4d61-af8e-bca069e4bf0e", 
+  "name": "Kaitlin", 
+  "email": "qa_tmp_andersonvalerie@example.org"
+}
+</msg>
+<status status="PASS" starttime="20220124 18:44:47.165" endtime="20220124 18:44:47.165"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${res_body}</arg>
+<arg>${name}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220124 18:44:47.165" endtime="20220124 18:44:47.165"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${res_body}</arg>
+<arg>${email}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220124 18:44:47.166" endtime="20220124 18:44:47.166"/>
+</kw>
+<status status="PASS" starttime="20220124 18:44:47.058" endtime="20220124 18:44:47.166"/>
+</test>
+<test id="s1-t3" name="Deve retornar um erro ao cadastrar um usuário com um e-mail existente">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220124 18:44:47.167" level="INFO">Creating Session using : alias=mysession, url=http://localhost:5000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220124 18:44:47.166" endtime="20220124 18:44:47.167"/>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<var>${name}</var>
+<msg timestamp="20220124 18:44:47.167" level="INFO">${name} = Maria</msg>
+<status status="PASS" starttime="20220124 18:44:47.167" endtime="20220124 18:44:47.167"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220124 18:44:47.167" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220124 18:44:47.167" endtime="20220124 18:44:47.167"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/v1/users/</arg>
+<arg>data={"name": "${name}", "email": "robot_user@example.com", "password": "123456"}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220124 18:44:47.174" level="INFO">POST Request : url=http://localhost:5000/api/v1/users/ 
+ path_url=/api/v1/users/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '74'} 
+ body={"name": "Maria", "email": "robot_user@example.com", "password": "123456"} 
+ </msg>
+<msg timestamp="20220124 18:44:47.175" level="INFO">POST Response : url=http://localhost:5000/api/v1/users/ 
+ status=409, reason=CONFLICT 
+ headers={'Content-Type': 'application/json', 'Content-Length': '147', 'Server': 'Werkzeug/2.0.1 Python/3.8.10', 'Date': 'Mon, 24 Jan 2022 21:44:47 GMT'} 
+ body={
+  "code": "EMAIL_ALREADY_EXISTS", 
+  "message": "The informed Email is already taken!", 
+  "details": [
+    "This email is already taken!"
+  ]
+}
+ 
+ </msg>
+<msg timestamp="20220124 18:44:47.178" level="FAIL">HTTPError: 409 Client Error: CONFLICT for url: http://localhost:5000/api/v1/users/</msg>
+<status status="FAIL" starttime="20220124 18:44:47.167" endtime="20220124 18:44:47.179"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220124 18:44:47.179" endtime="20220124 18:44:47.179"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220124 18:44:47.179" endtime="20220124 18:44:47.179"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20220124 18:44:47.179" endtime="20220124 18:44:47.180"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>409</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20220124 18:44:47.180" endtime="20220124 18:44:47.180"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20220124 18:44:47.180" endtime="20220124 18:44:47.180"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${res_body}</arg>
+<arg>${name}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20220124 18:44:47.180" endtime="20220124 18:44:47.180"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${res_body}</arg>
+<arg>${email}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20220124 18:44:47.180" endtime="20220124 18:44:47.180"/>
+</kw>
+<status status="FAIL" starttime="20220124 18:44:47.166" endtime="20220124 18:44:47.180">HTTPError: 409 Client Error: CONFLICT for url: http://localhost:5000/api/v1/users/</status>
+</test>
+<status status="FAIL" starttime="20220124 18:44:46.858" endtime="20220124 18:44:47.181"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="V1 Users">V1 Users</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
