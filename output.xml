@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220124 18:44:46.857" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220124 19:06:10.358" rpa="false" schemaversion="2">
 <suite id="s1" name="V1 Users" source="/home/wilton/source-github/robot_integration_api_framework/TestCases/v1_users.robot">
 <test id="s1-t1" name="Deve retornar uma lista de usuários cadastrados">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220124 18:44:47.035" level="INFO">Creating Session using : alias=mysession, url=http://localhost:5000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220124 18:44:47.034" endtime="20220124 18:44:47.035"/>
+<msg timestamp="20220124 19:06:10.538" level="INFO">Creating Session using : alias=mysession, url=http://localhost:5000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220124 19:06:10.538" endtime="20220124 19:06:10.539"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>mysession</arg>
 <arg>/v1/users</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220124 18:44:47.054" level="INFO">GET Request : url=http://localhost:5000/api/v1/users (redirected) 
+<msg timestamp="20220124 19:06:10.554" level="INFO">GET Request : url=http://localhost:5000/api/v1/users (redirected) 
  path_url=/api/v1/users 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220124 18:44:47.054" level="INFO">GET Response : url=http://localhost:5000/api/v1/users/ 
+<msg timestamp="20220124 19:06:10.554" level="INFO">GET Response : url=http://localhost:5000/api/v1/users/ 
  status=200, reason=OK 
- headers={'Content-Type': 'application/json', 'Content-Length': '26763', 'Server': 'Werkzeug/2.0.1 Python/3.8.10', 'Date': 'Mon, 24 Jan 2022 21:44:47 GMT'} 
+ headers={'Content-Type': 'application/json', 'Content-Length': '27289', 'Server': 'Werkzeug/2.0.1 Python/3.8.10', 'Date': 'Mon, 24 Jan 2022 22:06:10 GMT'} 
  body=[
   {
     "id": "49efb475-0428-4d14-8a86-490f256d0b90", 
@@ -428,27 +428,27 @@
     "name": "QATMP7059", 
     "email":... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg timestamp="20220124 18:44:47.054" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220124 18:44:47.035" endtime="20220124 18:44:47.054"/>
+<msg timestamp="20220124 19:06:10.555" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220124 19:06:10.539" endtime="20220124 19:06:10.555"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220124 18:44:47.055" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20220124 18:44:47.055" endtime="20220124 18:44:47.055"/>
+<msg timestamp="20220124 19:06:10.556" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20220124 19:06:10.555" endtime="20220124 19:06:10.556"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220124 18:44:47.055" endtime="20220124 18:44:47.056"/>
+<status status="PASS" starttime="20220124 19:06:10.556" endtime="20220124 19:06:10.556"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${body}</var>
 <arg>${response.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220124 18:44:47.057" level="INFO">${body} = [
+<msg timestamp="20220124 19:06:10.558" level="INFO">${body} = [
   {
     "id": "49efb475-0428-4d14-8a86-490f256d0b90", 
     "name": "UnixUser", 
@@ -457,40 +457,40 @@
   {
     "id": "d00dd56c-4cd3-40a8-97ec-48c575873007", 
     "name": "QATMP01...</msg>
-<status status="PASS" starttime="20220124 18:44:47.056" endtime="20220124 18:44:47.057"/>
+<status status="PASS" starttime="20220124 19:06:10.557" endtime="20220124 19:06:10.558"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${body}</arg>
 <arg>UnixUser</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220124 18:44:47.057" endtime="20220124 18:44:47.057"/>
+<status status="PASS" starttime="20220124 19:06:10.558" endtime="20220124 19:06:10.558"/>
 </kw>
-<status status="PASS" starttime="20220124 18:44:47.034" endtime="20220124 18:44:47.057"/>
+<status status="PASS" starttime="20220124 19:06:10.538" endtime="20220124 19:06:10.558"/>
 </test>
 <test id="s1-t2" name="Deve cadastrar um novo usuário com sucesso">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220124 18:44:47.058" level="INFO">Creating Session using : alias=mysession, url=http://localhost:5000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220124 18:44:47.058" endtime="20220124 18:44:47.058"/>
+<msg timestamp="20220124 19:06:10.559" level="INFO">Creating Session using : alias=mysession, url=http://localhost:5000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220124 19:06:10.559" endtime="20220124 19:06:10.560"/>
 </kw>
 <kw name="First Name" library="FakerLibrary">
 <var>${name}</var>
-<msg timestamp="20220124 18:44:47.059" level="INFO">${name} = Kaitlin</msg>
-<status status="PASS" starttime="20220124 18:44:47.058" endtime="20220124 18:44:47.059"/>
+<msg timestamp="20220124 19:06:10.560" level="INFO">${name} = Monica</msg>
+<status status="PASS" starttime="20220124 19:06:10.560" endtime="20220124 19:06:10.560"/>
 </kw>
 <kw name="Email" library="FakerLibrary">
 <var>${email}</var>
-<msg timestamp="20220124 18:44:47.059" level="INFO">${email} = andersonvalerie@example.org</msg>
-<status status="PASS" starttime="20220124 18:44:47.059" endtime="20220124 18:44:47.059"/>
+<msg timestamp="20220124 19:06:10.561" level="INFO">${email} = sarah26@example.com</msg>
+<status status="PASS" starttime="20220124 19:06:10.560" endtime="20220124 19:06:10.561"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220124 18:44:47.059" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20220124 18:44:47.059" endtime="20220124 18:44:47.059"/>
+<msg timestamp="20220124 19:06:10.562" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220124 19:06:10.561" endtime="20220124 19:06:10.562"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
@@ -499,82 +499,82 @@
 <arg>data={"name": "${name}", "email": "qa_tmp_${email}", "password": "123456"}</arg>
 <arg>headers=${header}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220124 18:44:47.163" level="INFO">POST Request : url=http://localhost:5000/api/v1/users/ 
+<msg timestamp="20220124 19:06:10.641" level="INFO">POST Request : url=http://localhost:5000/api/v1/users/ 
  path_url=/api/v1/users/ 
- headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '88'} 
- body={"name": "Kaitlin", "email": "qa_tmp_andersonvalerie@example.org", "password": "123456"} 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '79'} 
+ body={"name": "Monica", "email": "qa_tmp_sarah26@example.com", "password": "123456"} 
  </msg>
-<msg timestamp="20220124 18:44:47.163" level="INFO">POST Response : url=http://localhost:5000/api/v1/users/ 
+<msg timestamp="20220124 19:06:10.641" level="INFO">POST Response : url=http://localhost:5000/api/v1/users/ 
  status=201, reason=CREATED 
- headers={'Content-Type': 'application/json', 'Content-Length': '123', 'Server': 'Werkzeug/2.0.1 Python/3.8.10', 'Date': 'Mon, 24 Jan 2022 21:44:47 GMT'} 
+ headers={'Content-Type': 'application/json', 'Content-Length': '114', 'Server': 'Werkzeug/2.0.1 Python/3.8.10', 'Date': 'Mon, 24 Jan 2022 22:06:10 GMT'} 
  body={
-  "id": "815c1e72-df60-4d61-af8e-bca069e4bf0e", 
-  "name": "Kaitlin", 
-  "email": "qa_tmp_andersonvalerie@example.org"
+  "id": "ab491464-1bed-47dc-820d-3f7584b3e869", 
+  "name": "Monica", 
+  "email": "qa_tmp_sarah26@example.com"
 }
  
  </msg>
-<msg timestamp="20220124 18:44:47.163" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220124 18:44:47.060" endtime="20220124 18:44:47.163"/>
+<msg timestamp="20220124 19:06:10.641" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220124 19:06:10.562" endtime="20220124 19:06:10.641"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220124 18:44:47.164" level="INFO">${status_code} = 201</msg>
-<status status="PASS" starttime="20220124 18:44:47.163" endtime="20220124 18:44:47.164"/>
+<msg timestamp="20220124 19:06:10.643" level="INFO">${status_code} = 201</msg>
+<status status="PASS" starttime="20220124 19:06:10.642" endtime="20220124 19:06:10.643"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>201</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220124 18:44:47.164" endtime="20220124 18:44:47.164"/>
+<status status="PASS" starttime="20220124 19:06:10.643" endtime="20220124 19:06:10.643"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_body}</var>
 <arg>${response.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220124 18:44:47.165" level="INFO">${res_body} = {
-  "id": "815c1e72-df60-4d61-af8e-bca069e4bf0e", 
-  "name": "Kaitlin", 
-  "email": "qa_tmp_andersonvalerie@example.org"
+<msg timestamp="20220124 19:06:10.644" level="INFO">${res_body} = {
+  "id": "ab491464-1bed-47dc-820d-3f7584b3e869", 
+  "name": "Monica", 
+  "email": "qa_tmp_sarah26@example.com"
 }
 </msg>
-<status status="PASS" starttime="20220124 18:44:47.165" endtime="20220124 18:44:47.165"/>
+<status status="PASS" starttime="20220124 19:06:10.644" endtime="20220124 19:06:10.644"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${res_body}</arg>
 <arg>${name}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220124 18:44:47.165" endtime="20220124 18:44:47.165"/>
+<status status="PASS" starttime="20220124 19:06:10.644" endtime="20220124 19:06:10.645"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${res_body}</arg>
 <arg>${email}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220124 18:44:47.166" endtime="20220124 18:44:47.166"/>
+<status status="PASS" starttime="20220124 19:06:10.645" endtime="20220124 19:06:10.645"/>
 </kw>
-<status status="PASS" starttime="20220124 18:44:47.058" endtime="20220124 18:44:47.166"/>
+<status status="PASS" starttime="20220124 19:06:10.559" endtime="20220124 19:06:10.645"/>
 </test>
-<test id="s1-t3" name="Deve retornar um erro ao cadastrar um usuário com um e-mail existente">
+<test id="s1-t3" name="Deve retornar um erro ao tentar cadastrar um usuário com um email existente">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220124 18:44:47.167" level="INFO">Creating Session using : alias=mysession, url=http://localhost:5000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220124 18:44:47.166" endtime="20220124 18:44:47.167"/>
+<msg timestamp="20220124 19:06:10.646" level="INFO">Creating Session using : alias=mysession, url=http://localhost:5000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220124 19:06:10.646" endtime="20220124 19:06:10.646"/>
 </kw>
 <kw name="First Name" library="FakerLibrary">
 <var>${name}</var>
-<msg timestamp="20220124 18:44:47.167" level="INFO">${name} = Maria</msg>
-<status status="PASS" starttime="20220124 18:44:47.167" endtime="20220124 18:44:47.167"/>
+<msg timestamp="20220124 19:06:10.647" level="INFO">${name} = Heather</msg>
+<status status="PASS" starttime="20220124 19:06:10.647" endtime="20220124 19:06:10.647"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220124 18:44:47.167" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20220124 18:44:47.167" endtime="20220124 18:44:47.167"/>
+<msg timestamp="20220124 19:06:10.647" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220124 19:06:10.647" endtime="20220124 19:06:10.647"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
@@ -582,15 +582,16 @@
 <arg>/v1/users/</arg>
 <arg>data={"name": "${name}", "email": "robot_user@example.com", "password": "123456"}</arg>
 <arg>headers=${header}</arg>
+<arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220124 18:44:47.174" level="INFO">POST Request : url=http://localhost:5000/api/v1/users/ 
+<msg timestamp="20220124 19:06:10.653" level="INFO">POST Request : url=http://localhost:5000/api/v1/users/ 
  path_url=/api/v1/users/ 
- headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '74'} 
- body={"name": "Maria", "email": "robot_user@example.com", "password": "123456"} 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '76'} 
+ body={"name": "Heather", "email": "robot_user@example.com", "password": "123456"} 
  </msg>
-<msg timestamp="20220124 18:44:47.175" level="INFO">POST Response : url=http://localhost:5000/api/v1/users/ 
+<msg timestamp="20220124 19:06:10.653" level="INFO">POST Response : url=http://localhost:5000/api/v1/users/ 
  status=409, reason=CONFLICT 
- headers={'Content-Type': 'application/json', 'Content-Length': '147', 'Server': 'Werkzeug/2.0.1 Python/3.8.10', 'Date': 'Mon, 24 Jan 2022 21:44:47 GMT'} 
+ headers={'Content-Type': 'application/json', 'Content-Length': '147', 'Server': 'Werkzeug/2.0.1 Python/3.8.10', 'Date': 'Mon, 24 Jan 2022 22:06:10 GMT'} 
  body={
   "code": "EMAIL_ALREADY_EXISTS", 
   "message": "The informed Email is already taken!", 
@@ -600,61 +601,40 @@
 }
  
  </msg>
-<msg timestamp="20220124 18:44:47.178" level="FAIL">HTTPError: 409 Client Error: CONFLICT for url: http://localhost:5000/api/v1/users/</msg>
-<status status="FAIL" starttime="20220124 18:44:47.167" endtime="20220124 18:44:47.179"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20220124 18:44:47.179" endtime="20220124 18:44:47.179"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20220124 18:44:47.179" endtime="20220124 18:44:47.179"/>
+<msg timestamp="20220124 19:06:10.653" level="INFO">${response} = &lt;Response [409]&gt;</msg>
+<status status="PASS" starttime="20220124 19:06:10.647" endtime="20220124 19:06:10.653"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="NOT RUN" starttime="20220124 18:44:47.179" endtime="20220124 18:44:47.180"/>
+<msg timestamp="20220124 19:06:10.653" level="INFO">${status_code} = 409</msg>
+<status status="PASS" starttime="20220124 19:06:10.653" endtime="20220124 19:06:10.653"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>409</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" starttime="20220124 18:44:47.180" endtime="20220124 18:44:47.180"/>
+<status status="PASS" starttime="20220124 19:06:10.654" endtime="20220124 19:06:10.654"/>
 </kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${res_body}</var>
-<arg>${response.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<status status="NOT RUN" starttime="20220124 18:44:47.180" endtime="20220124 18:44:47.180"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.json()["code"]}</arg>
+<arg>EMAIL_ALREADY_EXISTS</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220124 19:06:10.654" endtime="20220124 19:06:10.654"/>
 </kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${res_body}</arg>
-<arg>${name}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" starttime="20220124 18:44:47.180" endtime="20220124 18:44:47.180"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${res_body}</arg>
-<arg>${email}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" starttime="20220124 18:44:47.180" endtime="20220124 18:44:47.180"/>
-</kw>
-<status status="FAIL" starttime="20220124 18:44:47.166" endtime="20220124 18:44:47.180">HTTPError: 409 Client Error: CONFLICT for url: http://localhost:5000/api/v1/users/</status>
+<status status="PASS" starttime="20220124 19:06:10.646" endtime="20220124 19:06:10.654"/>
 </test>
-<status status="FAIL" starttime="20220124 18:44:46.858" endtime="20220124 18:44:47.181"/>
+<status status="PASS" starttime="20220124 19:06:10.359" endtime="20220124 19:06:10.655"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="1" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="1" skip="0" id="s1" name="V1 Users">V1 Users</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="V1 Users">V1 Users</stat>
 </suite>
 </statistics>
 <errors>
